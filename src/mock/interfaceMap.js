@@ -1,4 +1,5 @@
-import familyList from './apis/userHome/familyList' // 个人主页的接口
+import userHome from "./apis/userHome" // 个人主页的接口
+import familyHome from "./apis/familyHome"
 // import queryMobileProperties from "./queryMobileProperties";
 // import pharmJoinProject from "./pharmJoinProject";
 // import queryCourseList from "./queryCourseList";
@@ -12,7 +13,8 @@ import familyList from './apis/userHome/familyList' // 个人主页的接口
 // import taskList from "./taskList";
 
 export default {
-  familyList: () => familyList,
+  userHome: () => userHome,
+  familyHome: () => familyHome
   // pharmJoinProject: () => pharmJoinProject,
   // queryCourseList: () => queryCourseList,
   // queryProjectList: () => queryProjectList,

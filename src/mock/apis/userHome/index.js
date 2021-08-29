@@ -2,6 +2,7 @@ const Mock = require("mockjs");
 let icon1 = require("../../../assets/images/familyFatherIcon@2x.png");
 let icon2 = require("../../../assets/images/addressIcon@2x.png");
 let icon3 = require("../../../assets/images/baseInforIcon@2x.png");
+let images1 = require("../../../assets/images/aboutReadIcon@2x.png");
 
 const data = Mock.mock({
   message: "message",
@@ -227,6 +228,47 @@ const data = Mock.mock({
 			},{
 				time: "2019年5月",
 				detail: "绩效考核系统要进一步完善，各项目将2018年度绩效考核成绩梳理清晰、上报，找出成绩的同时要将不合理的地方挑出并分析原因解决，制定新一年的指标并上报。"
+			}
+		],
+		article: [
+			{
+				title: "铁血丹心筑长城",
+				time: "2019-10-20",
+				outline: "人力资源管理方面，由专人牵头制定人才招聘、培养计划，各个板块都要有相关培训，管理人员参与其中，增强管理素质……",
+				link: "https://www.baidu.com"
+			},{
+				title: "铁血丹心筑2",
+				time: "2010-01-10",
+				outline: "人力资源管理方面，由专人牵头制定人才招聘、培养计划，各个板块都要有相关培训，管理人员参与其中……",
+				link: "https://www.baidu.com"
+			}
+		],
+		book: [
+			{
+				images: images1,
+				name: "《秦氏溯源》",
+				writer: ["秦永生", "张上深"],
+				link: "https://www.baidu.com"
+			},{
+				images: images1,
+				name: "《秦氏溯源1》",
+				writer: ["秦永生"],
+				link: "https://www.baidu.com"
+			}
+		],
+		picture: [
+			{
+				images: images1
+			},{
+				images: images1
+			},{
+				images: images1
+			},{
+				images: images1
+			},{
+				images: images1
+			},{
+				images: images1
 			}
 		]
 	}

@@ -11,8 +11,7 @@
         </van-col>
         <van-col span="14" class="family-infor">
           <p class="family-name">
-            测试测试测试测<i class="detail-link"
-              >查看详情<van-icon name="arrow"
+            测试测试测试测<i class="detail-link" @click="handleFamilyInfor">查看家族<van-icon name="arrow"
             /></i>
           </p>
           <p class="name">测试测</p>
@@ -65,7 +64,7 @@
       </div>
     </div>
     <div class="card-wrap radius">
-      <div class="user-title">
+      <div class="user-title dark-bg">
         <p>详细关系</p>
       </div>
       <div class="relation-wrap">
@@ -127,6 +126,42 @@
 			</div>
 			<i class="space"></i>
 		</div>
+		<div class="card-wrap radius">
+      <div class="user-title">
+        <p>精选文章</p>
+      </div>
+			<div class="article-wrap">
+				<div class="article" v-for="(list, index) in familyDetailList.article" :key="index">
+					<p class="article-title">{{ list.title }}</p>
+					<p class="article-publish-time">发布时间：{{ list.time }}</p>
+					<p class="article-detail">{{ list.outline }}</p>
+					<p class="article-link"><a :href="list.link">阅读</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="card-wrap radius">
+      <div class="user-title">
+        <p>相关书籍</p>
+      </div>
+			<div class="book-wrap">
+				<van-row class="book" gutter="30" v-for="(list, index) in familyDetailList.book" :key="index">
+					<van-col span="4" class="book-image"><img :src="list.images"></van-col>
+					<van-col span="20" class="book-detail">
+						<p class="book-name">{{ list.name }}</p>
+						<p class="book-writer">作者：<i v-for="(item, i) in list.writer" :key="i">{{ item }}</i><a :href="list.link">阅读</a></p>
+					</van-col>
+				</van-row>
+			</div>
+		</div>
+		<div class="card-wrap radius">
+      <div class="user-title">
+        <p>相关图片/视频</p>
+      </div>
+			<van-row class="picture-wrap" gutter="35">
+				<van-col span="8" class="picture-image" v-for="(list, index) in familyDetailList.picture" :key="index"><img :src="list.images"></van-col>
+			</van-row>
+		</div>
+		<van-button class="link-button">关联此人</van-button>
   </div>
 </template>
 <script>
@@ -144,13 +179,16 @@ export default {
     renderPageInit() {
       let params = {};
 
-      const res = this.$api.familyList(params);
+      const res = this.$api.userHome(params);
 
       if (res && res.code == 0 && res.success) {
         this.familyDetailList = res.data;
       } else {
       }
-    }
+    },
+		handleFamilyInfor() {
+			this.$router.push({path:"/familyHome"})
+		}
   }
 };
 </script>
@@ -159,7 +197,9 @@ export default {
   background-color: #e2e2e2;
   .user-head {
     height: 318px;
-    background-color: #1b2026;
+    background-image: url(../../assets/images/headBg@2x.png);
+		background-repeat: no-repeat;
+		background-size: 100%;
     .user-infor {
       padding: 54px 0 0 0;
       .avatar {
@@ -226,6 +266,9 @@ export default {
       padding: 0 0 0 60px;
     }
   }
+	.dark-bg {
+		background-image: url(../../assets/images/titleDarkBg.png);
+	}
   .card-wrap {
     background-color: #fff;
     margin: 0 20px 20px 20px;
@@ -235,6 +278,7 @@ export default {
       padding: 0 50px 20px 50px;
       .item-images {
         margin: 0 26px 0 0;
+				line-height: 80px;
         img {
           width: 40px;
           height: 40px;
@@ -328,6 +372,9 @@ export default {
 			}
     }
   }
+	.card-wrap:last-child {
+		margin-bottom: 0;
+	}
 	.family-table {
 		height: 100px;
 		margin: 30px 50px;
@@ -424,6 +471,99 @@ export default {
 			color: #333;
 			text-indent: 2em;
 		}
+	}
+	.article-wrap {
+		padding: 0 70px;
+		.article {
+			margin: 30px 0 20px;
+			border-bottom: 2px dashed #E5E5E5;
+			.article-title {
+				font-size: 40px;
+				color: #333;
+				margin: 0 0 20px 0;
+			}
+			.article-publish-time {
+				font-size: 22px;
+				color: #999;
+				margin: 0 0 20px 0;
+			}
+			.article-detail {
+				font-size: 26px;
+				color: #333;
+				margin: 0 0 20px 0;
+			}
+			.article-link a {
+				display: block;
+				font-size: 26px;
+				color: #197CE0;
+				margin: 0 0 30px 0;
+				text-align: right;
+				text-decoration: underline;
+			}
+		}
+		.article:last-child {
+			border-bottom: none;
+		}
+	}
+	.book-wrap {
+		padding: 0 60px;
+		.book {
+			padding: 40px 0;
+			border-bottom: 2px dashed #E5E5E5;
+			.book-image {
+				img {
+					width: 95px;
+					height: 95px;
+				}
+			}
+			.book-detail {
+				.book-name {
+					font-size: 40px;
+					color: #333;
+					margin: 0 0 5px 0;
+				}
+				.book-writer {
+					font-size: 26px;
+					color: #333;
+					padding: 0 0 0 15px;
+					i {
+						display: inline-block;
+						margin: 0 10px 0 0;
+					}
+					a {
+						float: right;
+						display: inline-block;
+						font-size: 26px;
+						color: #197CE0;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		.book:last-child {
+			border-bottom: none;
+		}
+	}
+	.picture-wrap {
+		padding: 25px 55px;
+		.picture-image {
+			margin: 15px 0;
+			img {
+				display: block;
+				width: 174px;
+				height: 174px;
+			}
+		}
+	}
+	.link-button {
+		display: block;
+		width: 709px;
+		font-size: 30px;
+		color: #fff;
+		height: 100px;
+		background-color: #414141;
+		border-radius: 20px;
+		margin: 0 20px;
 	}
   .bottom-radius {
     padding: 0 0 10px 0;
