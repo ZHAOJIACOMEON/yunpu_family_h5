@@ -33,78 +33,78 @@ const data = Mock.mock({
 					icon: icon3,
 					name: "秦出自嬴姓。秦氏是少昊金天氏的直系后裔，少昊是中国野蛮时代中期一位极富传奇色彩的神话人物。他的名字，在中国典籍五花八门，除“少昊”外，写作“少皓”、“少皞”、“少皋”，此外称“朱宣”、“白帝”、“西皇”、“金天氏”、“穷桑氏”。《左传》、《帝王世纪》都说少昊名叫挚。但《帝王世纪》说：“少昊帝名挚，字青阳，嬴姓也。”，又有少昊的裔孙伯益，其后非子的封地于秦，有以国名为氏者。"
 				}
-
 			]
 		},
     relationTable: [
       {
         era: "1",
-        name: "绍",
+        name: "测试",
+        rank: "1",
+        dynasty: "",
+        current: true
+      },{
+        era: "1",
+        name: "测试",
         rank: "1",
         dynasty: ""
       },{
         era: "1",
-        name: "绍",
+        name: "测试",
         rank: "1",
         dynasty: ""
       },{
         era: "1",
-        name: "绍",
+        name: "测试",
+        rank: "1",
+        dynasty: "测试测"
+      },{
+        era: "1",
+        name: "测试",
         rank: "1",
         dynasty: ""
       },{
         era: "1",
-        name: "绍",
-        rank: "1",
-        dynasty: "昭朝世"
-      },{
-        era: "1",
-        name: "绍",
+        name: "测试",
         rank: "1",
         dynasty: ""
       },{
         era: "1",
-        name: "绍",
+        name: "测试",
         rank: "1",
         dynasty: ""
       },{
         era: "1",
-        name: "绍",
+        name: "测试",
+        rank: "1",
+        dynasty: "测试测"
+      },{
+        era: "1",
+        name: "测试",
         rank: "1",
         dynasty: ""
       },{
         era: "1",
-        name: "绍",
-        rank: "1",
-        dynasty: "昭朝世"
-      },{
-        era: "1",
-        name: "绍",
+        name: "测试",
         rank: "1",
         dynasty: ""
       },{
         era: "1",
-        name: "绍",
+        name: "测试",
         rank: "1",
         dynasty: ""
       },{
         era: "1",
-        name: "绍",
+        name: "测试",
         rank: "1",
         dynasty: ""
       },{
         era: "1",
-        name: "绍",
+        name: "测试",
         rank: "1",
         dynasty: ""
       },{
         era: "1",
-        name: "绍",
-        rank: "1",
-        dynasty: ""
-      },{
-        era: "1",
-        name: "绍",
+        name: "测试",
         rank: "1",
         dynasty: ""
       },

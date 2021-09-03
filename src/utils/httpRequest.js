@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const TIMEOUT = 10 * 1000
-const baseURL = ''
+const baseURL = ""
 const instance = axios.create({
   timeout: TIMEOUT,
   baseURL: baseURL,
