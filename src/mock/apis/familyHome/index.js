@@ -2,6 +2,7 @@ const Mock = require("mockjs");
 let icon1 = require("../../../assets/images/familyFatherIcon@2x.png");
 let icon2 = require("../../../assets/images/addressIcon@2x.png");
 let icon3 = require("../../../assets/images/baseInforIcon@2x.png");
+let images1 = require("../../../assets/images/aboutReadIcon@2x.png");
 
 const data = Mock.mock({
   message: "message",
@@ -108,7 +109,42 @@ const data = Mock.mock({
         rank: "1",
         dynasty: ""
       },
-    ]
+    ],
+    famousPerson: [
+      {
+        name: "秦有为(清代)",
+        detail: "字世缨，单人。景泰二年进士。授南京御史。劾治内官傅锁儿罪，谏止江南采翠毛、鱼䴙等使。权贵忌之，蜚语闻。会考察，坐谪湖广驿丞。天顺初，以御史练纲荐，迁雄县知县。奉御杜坚捕天鹅暴横，纮执杖其从者，坐下诏"
+      },{
+        name: "秦元勋(近代)",
+        detail: "（1923－2008）数学家。贵州贵阳人。1943年毕业于浙江大学数学系。1946年获美国哈佛大学文学硕士学位，1947年获美国哈佛大学哲学博士学位，1988年被美国俄侅俄大学玛丽塔学院授予荣..."
+      }
+    ],
+    book: [
+			{
+				images: images1,
+				name: "《秦氏溯源》",
+				writer: ["秦永生", "张上深"],
+				link: "https://www.baidu.com"
+			},{
+				images: images1,
+				name: "《秦氏溯源1》",
+				writer: ["秦永生"],
+				link: "https://www.baidu.com"
+			}
+		],
+    article: [
+			{
+				title: "铁血丹心筑长城",
+				time: "2019-10-20",
+				outline: "人力资源管理方面，由专人牵头制定人才招聘、培养计划，各个板块都要有相关培训，管理人员参与其中，增强管理素质……",
+				link: "https://www.baidu.com"
+			},{
+				title: "铁血丹心筑2",
+				time: "2010-01-10",
+				outline: "人力资源管理方面，由专人牵头制定人才招聘、培养计划，各个板块都要有相关培训，管理人员参与其中……",
+				link: "https://www.baidu.com"
+			}
+		],
   }
 });
 

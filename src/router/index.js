@@ -5,6 +5,8 @@ Vue.use(VueRouter);
 
 import User from "@/views/userHome/user"
 import FamilyHome from "@/views/familyHome/family"
+import SearchHome from "@/views/searchHome/search"
+import SearchResult from "@/views/searchHome/searchResult"
 
 export default new VueRouter({
 	routes: [
@@ -16,6 +18,14 @@ export default new VueRouter({
 			path: "/familyHome",
 			name: "FamilyHome",
 			component: FamilyHome
+		},{
+			path: "/searchHome",
+			name: "SearchHome",
+			component: SearchHome
+		},{
+			path: "/searchResult",
+			name: "SearchResult",
+			component: SearchResult
 		}
 	]
 })
